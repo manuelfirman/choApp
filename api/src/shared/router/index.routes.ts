@@ -1,5 +1,7 @@
 import express, { Router } from "express";
-import { TestRoutes } from "../../moduloTest/test.routes";
+import { IngredientRoutes } from "../../ingredientes/ingredient.routes";
+import { StockRoutes } from "../../stock/stock.routes";
+import { PricesRoutes } from "../../precios/prices.routes";
 
 export class RoutesApp {
   public router: express.Application;
@@ -7,7 +9,9 @@ export class RoutesApp {
 
   public routes(): Router[] {
     return [
-      new TestRoutes().router,
+      new IngredientRoutes().router,
+      new StockRoutes().router,
+      new PricesRoutes().router,
       // Agregar routers de otros modulos al array
     ];
   }

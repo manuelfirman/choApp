@@ -26,6 +26,7 @@ export abstract class BaseServices<T extends BaseEntity>{
   }
 
   async putService(id: number, data: T): Promise<UpdateResult | null> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return this.repository.update({ id } as unknown as FindOptionsWhere<T>, data as any);
   }
 
