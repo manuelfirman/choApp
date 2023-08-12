@@ -11,5 +11,6 @@ export abstract class BaseRouter<T, U> {
     this.middleware = new Middleware();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   routes(path: string) {}
 }
